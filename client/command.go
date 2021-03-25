@@ -7,6 +7,7 @@ const (
 	GETLASTBLOCK    = "getlastblock"
 	GETALLBLOCKS    = "getallblocks"
 	GETNEWADDRESS   = "getnewaddress" //生成新的比特币地址
+	DUMPPRIVKEY     = "dumpprivkey"
 	LISTADDRESS     = "listaddress"   //列出所有目前已经生成并管理的地址
 	HELP            = "help"
 )

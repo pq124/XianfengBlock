@@ -42,6 +42,8 @@ func (cmd *CmdClient) Run() {
 		cmd.GetNewAddress()
 	case LISTADDRESS: //获取所有的地址列表
 		cmd.ListAddress()
+	case DUMPPRIVKEY:
+		cmd.DumpPrivKey()
 	case HELP:
 		cmd.Help()
 	default:
@@ -52,6 +54,22 @@ func (cmd *CmdClient) Run() {
 func (cmd *CmdClient) Default() {
 	fmt.Println("go run main.go：Unknown subcommand.")
 	fmt.Println("Run 'go run main.go help' for usage.")
+}
+
+func (cmd *CmdClient)DumpPrivKey()  {
+	dumpPrivkey:=flag.NewFlagSet(DUMPPRIVKEY,flag.ExitOnError)
+	address :=dumpPrivkey.String("address","","要导出的私钥地址")
+	dumpPrivkey.Parse(os.Args[2:])
+	if len(os.Args[2:]) > 2 {
+		fmt.Println("无法解析输入参数,请检查后重试!")
+		return
+	}
+	pri,err := cmd.Chain.DumpPrivkey(*address)
+	if err!=nil {
+		fmt.Println(err.Error())
+		return
+	}
+    fmt.Printf("私钥是%x",pri.D.Bytes())
 }
 
 func (cmd *CmdClient) ListAddress() {

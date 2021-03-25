@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="da62fece-34c3-4415-8297-2b67b3556b90" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chain/blockchain.go" beforeDir="false" afterPath="$PROJECT_DIR$/chain/blockchain.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client.go" beforeDir="false" afterPath="$PROJECT_DIR$/client/client.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/command.go" beforeDir="false" afterPath="$PROJECT_DIR$/client/command.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xianfengchain04.db" beforeDir="false" afterPath="$PROJECT_DIR$/xianfengchain04.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,5 +96,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1616603683867" />
+    <state x="886" y="146" width="672" height="678" key="search.everywhere.popup" timestamp="1616637389876">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="886" y="146" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1616637389876" />
   </component>
 </project>

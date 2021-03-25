@@ -1,6 +1,7 @@
 package chain
 
 import (
+	"crypto/ecdsa"
 	"github.com/bolt"
 	"errors"
 	"math/big"
@@ -452,4 +453,24 @@ func (chain *BlockChain) GetAddressList() ([]string, error) {
 		addList = append(addList, add)
 	}
 	return addList, nil
+}
+
+func (chain *BlockChain)DumpPrivkey(addr string)(*ecdsa.PrivateKey,error) {
+	//1.地址规范性检查
+	isAddrValid:=chain.Wallet.CheckAddress(addr)
+	if !isAddrValid {
+		return  nil,errors.New("地址不符合规范，请重试")
+	}
+	//2.钱包为空
+	if chain.Wallet.Address == nil{
+		return nil, errors.New("当前钱包未找到对应地址的私钥")
+	}
+
+	//3.到wallet找addr的对应的keypair
+	keyPair :=chain.Wallet.Address[addr]
+	if keyPair == nil {
+		return nil,errors.New("当前钱包未找到对应地址的私钥")
+	}
+	//4.找到了具体结果，将私钥返回
+	return  keyPair.Priv,nil
 }
